@@ -9,3 +9,7 @@ require("plugins.colorscheme")
 require("plugins.lualine")
 require("plugins.which-key")
 require("plugins.gitsigns")
+require("plugins.fzf-lua")
+
+require("plugins.lspconfig")
+require("plugins.mason")

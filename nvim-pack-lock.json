@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "fzf-lua": {
+      "rev": "bf59dcee2a8d894724b060401d2abf3d71d4bd47",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "gitsigns.nvim": {
       "rev": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -8,6 +12,10 @@
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "mini.icons": {
       "rev": "5b9076dae1bfbe47ba4a14bc8b967cde0ab5d77e",
       "src": "https://github.com/nvim-mini/mini.icons"
@@ -15,6 +23,10 @@
     "monokai-pro.nvim": {
       "rev": "d8884d4473667c48bd17a68d08383d38839136a3",
       "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "dd261ad5266ab5bbec249d21efeceda98ff3e1a6",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-web-devicons": {
       "rev": "d7462543c9e366c0d196c7f67a945eaaf5d99414",

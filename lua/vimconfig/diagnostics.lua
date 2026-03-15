@@ -1,23 +1,23 @@
+local signs = {
+  [vim.diagnostic.severity.ERROR] = " ",
+  [vim.diagnostic.severity.WARN] = " ",
+  [vim.diagnostic.severity.INFO] = " ",
+  [vim.diagnostic.severity.HINT] = " ",
+}
 vim.diagnostic.config {
-  update_in_insert = false,
-  severity_sort = true,
-  underline = true,
-  float = { 
-    border = 'rounded', 
+  update_in_insert = true,
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
+  float = {
+    border = 'rounded',
     source = 'if_many',
-    style = "minimal",
   },
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = " ", 
-      [vim.diagnostic.severity.WARN] =" ", 
-      [vim.diagnostic.severity.INFO] = "",
-      [vim.diagnostic.severity.HINT] = "",
-    },
+  signs = false,
+
+  virtual_text = {
+    prefix = function(diagnostic)
+      return signs[diagnostic.severity]
+    end,
+    spacing = 4
   },
-
-  virtual_text = true,
-  virtual_lines = false,
-
-  jump = { float = true },
+  severity_sort = true,
 }
