@@ -1,5 +1,14 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
     "fzf-lua": {
       "rev": "bf59dcee2a8d894724b060401d2abf3d71d4bd47",
       "src": "https://github.com/ibhagwan/fzf-lua"
@@ -23,6 +32,10 @@
     "monokai-pro.nvim": {
       "rev": "d8884d4473667c48bd17a68d08383d38839136a3",
       "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "nvim-autopairs": {
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lspconfig": {
       "rev": "dd261ad5266ab5bbec249d21efeceda98ff3e1a6",

@@ -10,6 +10,9 @@ require("plugins.lualine")
 require("plugins.which-key")
 require("plugins.gitsigns")
 require("plugins.fzf-lua")
+require("plugins.autopairs")
+require("plugins.blink")
 
 require("plugins.lspconfig")
 require("plugins.mason")
+
