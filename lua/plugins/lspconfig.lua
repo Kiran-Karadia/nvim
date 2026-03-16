@@ -33,8 +33,12 @@ local lua = {
   },
 }
 
+local javascript_and_typescript = {
+}
+
 local servers = {
-  lua_ls = lua
+  lua_ls = lua,
+  ts_ls = javascript_and_typescript
 }
 
 for server, config in pairs(servers) do
