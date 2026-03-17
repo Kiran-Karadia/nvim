@@ -45,3 +45,35 @@ for server, config in pairs(servers) do
   vim.lsp.config(server, config)
   vim.lsp.enable(server)
 end
+
+local function lsp_on_attach(ev)
+  local client = vim.lsp.get_client_by_id(ev.data.client_id)
+  if not client then
+    return
+  end
+
+  local bufnr = ev.buf
+  local haz_fzf, fzf = pcall(require, "fzf-lua")
+
+  local map = function(keymap, action, desc)
+    vim.keymap.set("n", keymap, action, {
+      noremap = true,
+      silent = true,
+      buffer = bufnr,
+      desc = desc
+    })
+  end
+
+  if haz_fzf then
+    map("<leader>gd", function()
+      fzf.lsp_definitions( { jump1 = false })
+    end, "Find all definitions")
+  else
+    map("<leader>gd", vim.lsp.buf.definition, "Go to definition")
+  end
+
+end
+
+local lspKeyMapAugroup = vim.api.nvim_create_augroup("LspKeymapsGroup", { clear = true })
+
+vim.api.nvim_create_autocmd("LspAttach", { group = lspKeyMapAugroup, callback = lsp_on_attach })

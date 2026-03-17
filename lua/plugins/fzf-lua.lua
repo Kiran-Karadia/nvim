@@ -44,4 +44,3 @@ end, { desc = "Quickfix list" })
 vk.set("n", "<leader><C-f>", function()
   fzf.blines()
 end, { desc = "Find in buffer" })
-
