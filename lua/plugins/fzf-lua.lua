@@ -11,6 +11,8 @@ local colors = { true }
 local winopts = {
   height = 0.95,
   width = 0.95,
+  backdrop = 10,
+  title_flags = false,
 }
 
 fzf.setup {
@@ -19,28 +21,42 @@ fzf.setup {
 }
 
 
-local vk = vim.keymap
+local map = function(keymap, action, desc)
+  vim.keymap.set("n", keymap, action, { desc = desc })
+end
 
-vk.set("n", "<leader>ff", function()
+map("<leader>f?" , function()
+  fzf.builtin()
+end, "Find picker")
+
+map("<leader>fr", function()
+  fzf.resume()
+end, "Resume last search")
+
+map("<leader>ff",  function()
   fzf.files()
-end, { desc = "Find files" })
+end, "Find files")
 
-vk.set("n", "<leader>fg", function()
+map("<leader>fg", function()
   fzf.live_grep()
-end, { desc = "Grep files" })
+end, "Grep files")
 
-vk.set("n", "<leader>fb", function()
+map("<leader>fb", function()
   fzf.buffers()
-end, { desc = "Find in all buffers" })
+end, "Find in all buffers")
 
-vk.set("n", "<leader>fh", function()
+map("<leader>fh", function()
   fzf.history()
-end, { desc = "Find history" })
+end, "Find history")
 
-vk.set("n", "<leader>fq", function()
+map("<leader>fq", function()
   fzf.quickfix()
-end, { desc = "Quickfix list" })
+end, "Quickfix list")
 
-vk.set("n", "<leader><C-f>", function()
+map("<leader><C-f>", function()
   fzf.blines()
-end, { desc = "Find in buffer" })
+end, "Find in buffer")
+
+map("<leader>fw", function()
+  fzf.grep_cWORD()
+end, "Find word")
